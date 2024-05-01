@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "1006918859723",
+    "firebase_url": "https://lsdwfirebase-default-rtdb.firebaseio.com",
+    "project_id": "lsdwfirebase",
+    "storage_bucket": "lsdwfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006918859723:android:23096e53864f624973d44e",
+        "android_client_info": {
+          "package_name": "com.appfirebase.basededatos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAABcujf6XtS265TfzKiCSmEN_7Za-3ZoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006918859723:android:0f4f1245cba59c6973d44e",
+        "android_client_info": {
+          "package_name": "com.appfirebase.basededatos.basededatos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAABcujf6XtS265TfzKiCSmEN_7Za-3ZoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
