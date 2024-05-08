@@ -1,9 +1,9 @@
+import 'package:basededatos/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:basededatos/utils/auth.dart';
 import 'package:basededatos/util/snackbar.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'dashboard.dart';
 
 class RegisterPage extends StatelessWidget {
   static const String routename = "Register";
@@ -11,7 +11,7 @@ class RegisterPage extends StatelessWidget {
   final AuthService _auth = AuthService();
   final GlobalKey<FormBuilderState> _formKey = GlobalKey<FormBuilderState>();
 
-  RegisterPage({Key? key}) : super(key: key);
+  RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ class RegisterPage extends StatelessWidget {
                           } else if (result == "email-already-in-use") {
                             showSnackBar(context, "Error, Email ya registrado");
                           } else if (result != null) {
-                            Navigator.popAndPushNamed(context, DashboardPage.routename);
+                            Navigator.popAndPushNamed(context, LoginPage.routename);
                           }
                         }
                       }

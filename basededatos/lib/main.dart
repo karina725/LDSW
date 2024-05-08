@@ -1,4 +1,6 @@
 import 'package:basededatos/firebase_options.dart';
+import 'package:basededatos/pages/catalogo.dart';
+import 'package:basededatos/pages/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:basededatos/preferences/preference_user.dart';
@@ -24,8 +26,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: prefs.ultimaPagina,
       routes: {
-        LoginPage.routename  :(context) => const LoginPage(),
+        LoginPage.routename  :(context) =>  LoginPage(),
+        DashboardPage.routename  :(context) =>  const DashboardPage(),
+        Catalogo.routename  :(context) =>  const Catalogo(),
+
       },
     );
   }
 }
+
