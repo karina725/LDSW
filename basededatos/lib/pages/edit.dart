@@ -7,7 +7,7 @@ class Edit extends StatefulWidget {
   final String titulo;
   final String uid;
 
-  const Edit({Key? key, required this.titulo, required this.uid}) : super(key: key);
+  const Edit({Key? key, required this.titulo, required this.uid, required subtitle}) : super(key: key);
 
   @override
   _EditState createState() => _EditState();

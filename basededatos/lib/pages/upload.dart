@@ -12,7 +12,7 @@ class _UploadState extends State<Upload> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Subir Imagen"),
+        title: const Text("Subir Imagen"),
         centerTitle: true,
       ),
     );

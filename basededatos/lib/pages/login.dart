@@ -52,8 +52,7 @@ class LoginPage extends StatelessWidget {
                   formBuilderTextField,
                   const SizedBox(height: 20),
                   FormBuilderTextField(
-                    name: 'Contraseña',
-                    
+                    name: 'Contraseña', 
                     obscureText: true,
                     decoration: const InputDecoration(
                       labelText: 'Contraseña',

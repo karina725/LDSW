@@ -23,6 +23,8 @@ class _CatalogoState extends State<Catalogo> {
   
   get titulo => null;
   
+  get fecha => null;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,6 +81,7 @@ class _CatalogoState extends State<Catalogo> {
                   key: ValueKey<String>(snapshot.data?[index]["uid"]),
                   child: ListTile(
                     title: Text(snapshot.data?[index]["titulo"]),
+                    subtitle: Text("Año: ${snapshot.data?[index]["fecha"]}"),
                     onTap: () {
                       final titulo = snapshot.data?[index]["titulo"];
                       final uid = snapshot.data?[index]["uid"];
@@ -88,6 +91,7 @@ class _CatalogoState extends State<Catalogo> {
                           MaterialPageRoute(
                             builder: (context) => Edit(
                               titulo: titulo,
+                              subtitle: fecha,
                               uid: uid,
                             )
                           )

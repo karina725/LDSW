@@ -13,6 +13,7 @@ Future <List> getCatalogo() async {
     final Map<String, dynamic> data = documento.data() as Map<String, dynamic>;
     final peli ={
       "titulo": data["titulo"],
+      "fecha": data["fecha"],
       "uid":documento.id,
     };
     catalogo.add(peli);
@@ -22,9 +23,14 @@ Future <List> getCatalogo() async {
   return  catalogo;
 }
 
-Future<void> addCatalogo(String titulo) async{
+Future<void> addCatalogo(String titulo, String fecha, String director, String genero, String sinopsis,  ) async {
   await db.collection("catalogo").add({
-    "titulo": titulo});
+    "titulo": titulo,
+    "fecha": fecha,
+    "director": director,
+    "genero": genero,
+    "sinopsis": sinopsis,
+  });
 }
 
 Future<void> updateTitulo(String uid, String newTitulo )async{
