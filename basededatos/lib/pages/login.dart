@@ -1,4 +1,5 @@
 import 'package:basededatos/pages/dashboard.dart';
+import 'package:basededatos/pages/registro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:basededatos/utils/auth.dart';
@@ -19,8 +20,10 @@ class LoginPage extends StatelessWidget {
       name: 'Correo electrónico',
       decoration: const InputDecoration(
         labelText: 'Correo electrónico',
-          labelStyle:  TextStyle(color: Color.fromARGB(255, 231, 9, 9),
-          fontSize: 30.0),
+        labelStyle: TextStyle(
+          color: Color.fromARGB(255, 231, 9, 9),
+          fontSize: 30.0,
+        ),
       ),
       validator: FormBuilderValidators.email(),
     );
@@ -29,21 +32,21 @@ class LoginPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Pelifans"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Stack(
-          children: [
-            Container(
-              width: double.infinity,
-              height: double.infinity,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/imagen1.jpg"),
-                  fit: BoxFit.cover,
-                ),
+      body: Stack(
+        children: [
+          Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/imagen1.jpg"),
+                fit: BoxFit.cover,
               ),
             ),
-            FormBuilder(
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: FormBuilder(
               key: _formKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -56,8 +59,10 @@ class LoginPage extends StatelessWidget {
                     obscureText: true,
                     decoration: const InputDecoration(
                       labelText: 'Contraseña',
-                      labelStyle:  TextStyle(color: Color.fromARGB(255, 247, 2, 2),
-                    fontSize: 30.0),
+                      labelStyle: TextStyle(
+                        color: Color.fromARGB(255, 247, 2, 2),
+                        fontSize: 30.0,
+                      ),
                     ),
                     validator: FormBuilderValidators.required(),
                   ),
@@ -70,7 +75,6 @@ class LoginPage extends StatelessWidget {
                           var result = await _auth.signInEmailAndPassword(
                               formData["Correo electrónico"] as String,
                               formData["Contraseña"] as String,
-                              
                           );
                           if (result == "weak-password") {
                             showSnackBar(context, "Error de contraseña");
@@ -83,29 +87,37 @@ class LoginPage extends StatelessWidget {
                       }
                     },
                     child: const Text('Iniciar Sesión',
-                    style: TextStyle(
-                      fontSize: 20.0
-                    ),),
-                  ),
-                  const SizedBox(height: 20),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Text(
-                      'Volver al inicio de sesión',
                       style: TextStyle(
-                        color: Color.fromARGB(255, 1, 47, 253),
-                        fontSize: 20.0,
+                        fontSize: 20.0
                       ),
                     ),
                   ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+          Positioned(
+            bottom: 20,
+            left: 20,
+            child: TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RegisterPage()),
+                  );
+              },
+              child: const Text(
+                "Registrarse",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 1, 47, 253),
+                  fontSize: 20.0,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
+

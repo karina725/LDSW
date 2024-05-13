@@ -1,5 +1,6 @@
 
-import "package:basededatos/pages/catalogo.dart";
+
+import "package:basededatos/pages/informacion.dart";
 import "package:flutter/material.dart";
 
 class DashboardPage extends StatelessWidget {
@@ -41,7 +42,7 @@ class DashboardPage extends StatelessWidget {
                   ElevatedButton(
                   onPressed: () {Navigator.push (
                       context, 
-                      MaterialPageRoute(builder: (context) =>   const Catalogo ()),
+                      MaterialPageRoute(builder: (context) =>   const Informacion (imageUrl: '',)),
                       );
                   },
                     child:  const Text ("Catalogo",
