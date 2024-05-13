@@ -85,9 +85,9 @@ class _InformacionState extends State<Informacion> {
                   );
                 },
                 onDismissed: (direction) {
-                  // Remove the item from the data source.
+                  
                   setState(() {
-                    // Here you might want to remove the item from your data source as well
+                    
                   });
                 },
                 child: Card(
